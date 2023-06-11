@@ -14,8 +14,8 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 YELLOW = (255, 255, 0)
 
-WIDTH = 500
-HEIGHT = 600
+WIDTH = 1040
+HEIGHT = 1040
 
 
 my_board = board.Board("blank")
