@@ -18,7 +18,7 @@ YELLOW = (255, 255, 0)
 
 WIDTH = 1080
 HEIGHT = 1080
-SPAN = WIDTH / 12.2  # TODO: spance may need to be modified.
+SPAN = WIDTH / 12.2  # TODO: spance may need to be modified; each rolling dice, the token will move: distance = step * span
 
 
 
@@ -59,9 +59,9 @@ while running:
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 dice_point = random.randint(1, 3)
-                # token2.rect.centerx += dice_point * SPAN * -1  # TODO: to be continued
-                token2.rect.centerx += 1 * SPAN * -1  # TODO: to be continued
-                token2.rect.centery += 0
+                print(f"dice point is {dice_point}.")
+                token2.location(dice_point)
+
     
 
 
