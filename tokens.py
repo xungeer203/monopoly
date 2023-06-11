@@ -34,7 +34,7 @@ class Token(pygame.sprite.Sprite):
         steps_dummpy = self.steps % 40  # 40 steps in total in single loop
         print(steps_dummpy)
 
-        # TODO: to be continued next time
+        # TODO: to be continued next time: the first rolling dice is incorrect.
         if steps_dummpy in range(0,10):
             self.rect.centerx = steps_dummpy * SPAN
             self.rect.centery = 0 * SPAN
@@ -48,8 +48,11 @@ class Token(pygame.sprite.Sprite):
             self.rect.centerx = 0 * SPAN
             self.rect.centery = (40 - steps_dummpy) * SPAN
         else:
-            self.rect.centerx = 500  # if error, place the token in the middle of board.
-            self.rect.centery = 500
+            self.rect.centerx = 5  # if error, place the token in the middle of board.
+            self.rect.centery = 5
+
+        self.rect.centerx *= SPAN
+        self.rect.centery *= SPAN
 
 
 if __name__ == "__main__":
