@@ -1,10 +1,13 @@
 """this file to make tokens for players, such as dinosaur, hat, dog, ...
 """
 
+import os
+
 class Token:
     def __init__(self, name):
         self.name = name
-        self.image_loc = r"pic\token_" + name + r".png"
+        # self.image_loc = r"pic\token_" + name + r".png"
+        self.image_loc = os.path.join("pic", r"token_" + name + r".png")
         
         self.money = 0
         self.position = (0, 0)
