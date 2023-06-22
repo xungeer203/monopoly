@@ -1,24 +1,25 @@
 import pygame
 import random
 
+import constants
 import board
 import cards
 import dice
 import players
 import tokens
 
-FPS = 60  # frames per seconds
+FPS = constants.FPS
 
-GREEN = (0,255,0)
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-YELLOW = (255, 255, 0)
+GREEN = constants.GREEN
+RED = constants.RED
+BLUE = constants.BLUE
+WHITE = constants.WHITE
+BLACK = constants.WHITE
+YELLOW = constants.YELLOW
 
-WIDTH = 1080
-HEIGHT = 1080
-SPAN = WIDTH / 12.2  # TODO: spance may need to be modified; each rolling dice, the token will move: distance = step * span
+WIDTH = constants.WIDTH
+HEIGHT = constants.HEIGHT
+SPAN = constants.SPAN
 
 
 
