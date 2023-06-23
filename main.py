@@ -59,7 +59,7 @@ while running:
             running = False
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                dice_point = random.randint(1, 3)  # TODO: attach real dice: class TwoDice.
+                dice_point = random.randint(1, 1)  # TODO: attach real dice: class TwoDice.
                 print(f"dice point is {dice_point}.")
                 token2.location(dice_point)
 
