@@ -36,6 +36,7 @@ token1 = tokens.Token("tophat")
 token2 = tokens.Token("battleship")
 token3 = tokens.Token("boot")
 token4 = tokens.Token("racecar")  # TODO: what if less then 4 players
+my_dice = dice.TwoDice()
 
 # # picture
 # background_img = pygame.image.load(my_board.image_loc).convert()
@@ -59,7 +60,8 @@ while running:
             running = False
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                dice_point = random.randint(1, 1)  # TODO: attach real dice: class TwoDice.
+                my_dice.roll()
+                dice_point = my_dice.point
                 print(f"dice point is {dice_point}.")
                 token2.location(dice_point)
 

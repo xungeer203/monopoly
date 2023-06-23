@@ -11,7 +11,6 @@ class TwoDice:
         import random
         random.seed()
         self.point1 = random.randint(1, 6)
-        # random.seed()
         self.point2 = random.randint(1, 6)
         self.point = self.point1 + self.point2
         self.is_double = True if self.point1 == self.point2 else False

@@ -18,34 +18,21 @@ class Token(pygame.sprite.Sprite):
         self.name = name
 
         # set image size and location
-        # self.image_loc = r"pic\token_" + name + r".png"
         self.image_loc = os.path.join("pic", r"token_" + name + r".png")
         self.image = pygame.image.load(self.image_loc).convert()
         self.image = pygame.transform.scale(self.image, (72, 72))
-        # self.image = self.image.convert_alpha()
         self.rect = self.image.get_rect()
 
-        # self.rect.centerx = 980/1080 * WIDTH
-        # self.rect.centery = 1000/1080 * HEIGHT
-        # "steps" will increase along with dice points
-        self.steps = 0  # TODO: initial step = 1 or 20???
-        self.location(0)  # initial position
-
+        # initial position
+        self.steps = 20  # "steps" will increase along with dice points
+        self.location(0)
         
         self.money = 0
-        # self.position = (0, 0)
 
     def location(self, dice_point):
-        print("before rolling dice, step: {}".format(self.steps))
         self.steps += dice_point
-        print("after rolling dice, step: {}".format(self.steps))
         steps_dummy = self.steps % 40  # 40 steps in total in single loop
-        print("steps_dummy:{}".format(steps_dummy))
 
-        # print("before rolling dice, centerx: {}".format(self.rect.centerx))
-        # print("before rolling dice, centery: {}".format(self.rect.centery))
-
-        # TODO: to be continued next time: the first rolling dice is incorrect.
         if steps_dummy in range(0,10):
             cell_x = steps_dummy
             cell_y = 0
