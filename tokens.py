@@ -28,6 +28,7 @@ class Token(pygame.sprite.Sprite):
         self.location(0)
         
         self.money = 0
+        self.is_arrested = True
 
     def location(self, dice_point):
         self.steps += dice_point
