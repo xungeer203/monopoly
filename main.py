@@ -36,7 +36,8 @@ token1 = tokens.Token("tophat")
 token2 = tokens.Token("battleship")
 token3 = tokens.Token("boot")
 token4 = tokens.Token("racecar")  # TODO: what if less then 4 players
-my_dice = dice.TwoDice()
+my_dice1 = dice.FirstDie()
+my_dice2 = dice.SecondDie()
 
 # # picture
 # background_img = pygame.image.load(my_board.image_loc).convert()
@@ -48,7 +49,8 @@ all_sprites = pygame.sprite.Group()
 all_sprites.add(token2)
 # all_sprites.add(token3)
 # all_sprites.add(token4)  # TODO: how to keep transparence?
-
+all_sprites.add(my_dice1)
+all_sprites.add(my_dice2)
 
 # game loop
 running = True
@@ -60,8 +62,9 @@ while running:
             running = False
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                my_dice.roll()
-                dice_point = my_dice.point
+                my_dice1.roll()
+                my_dice2.roll()
+                dice_point = my_dice1.point + my_dice2.point
                 print(f"dice point is {dice_point}.")
                 token2.location(dice_point)
 
